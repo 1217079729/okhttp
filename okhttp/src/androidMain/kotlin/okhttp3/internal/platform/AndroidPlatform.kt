@@ -15,8 +15,10 @@
  */
 package okhttp3.internal.platform
 
+import android.content.Context
 import android.os.Build
 import android.security.NetworkSecurityPolicy
+import android.util.Log
 import java.io.IOException
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
@@ -41,7 +43,9 @@ import okhttp3.internal.tls.TrustRootIndex
 
 /** Android 5 to 9 (API 21 to 28). */
 @SuppressSignatureCheck
-class AndroidPlatform : Platform() {
+class AndroidPlatform : Platform(), ContextAwarePlatform {
+  override var applicationContext: Context? = null
+
   private val socketAdapters =
     listOfNotNull(
       StandardAndroidSocketAdapter.buildIfSupported(),
@@ -119,6 +123,18 @@ class AndroidPlatform : Platform() {
     return super.getHandshakeServerNames(sslSocket)
   }
 
+  override fun log(
+    message: String,
+    level: Int,
+    t: Throwable?,
+  ) {
+    if (level == WARN) {
+      Log.w(Tag, message, t)
+    } else {
+      Log.i(Tag, message, t)
+    }
+  }
+
   /**
    * A trust manager for Android applications that customize the trust manager.
    *
@@ -147,6 +163,8 @@ class AndroidPlatform : Platform() {
   }
 
   companion object {
+    val Tag = "OkHttp"
+
     val isSupported: Boolean =
       when {
         !isAndroid -> false

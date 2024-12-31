@@ -1,7 +1,7 @@
 [versions]
 # 7.0.0 is JDK 17+ https://github.com/bndtools/bnd/wiki/Changes-in-7.0.0
 biz-aQute-bnd = "6.4.0"
-checkStyle = "10.21.0"
+checkStyle = "10.21.1"
 com-squareup-moshi = "1.15.2"
 com-squareup-okio = "3.9.1"
 de-mannodermaus-junit5 = "1.6.0"
@@ -10,12 +10,13 @@ kotlinx-serialization = "1.7.3"
 ksp = "2.1.0-1.0.29"
 lintGradle = "1.0.0-alpha03"
 mockserverClient = "5.15.0"
-org-bouncycastle = "1.76"
+org-bouncycastle = "1.79"
 org-conscrypt = "2.5.2"
-org-jetbrains-coroutines = "1.9.0"
+org-jetbrains-coroutines = "1.10.1"
 org-jetbrains-kotlin = "2.1.0"
 org-junit-jupiter = "5.11.4"
 retrofit = "2.11.0"
+startupRuntime = "1.2.0"
 testcontainers = "1.20.4"
 
 [libraries]
@@ -25,6 +26,7 @@ androidx-annotation = "androidx.annotation:annotation:1.9.1"
 androidx-espresso-core = "androidx.test.espresso:espresso-core:3.6.1"
 androidx-junit = "androidx.test.ext:junit:1.2.1"
 androidx-lint-gradle = { module = "androidx.lint:lint-gradle", version.ref = "lintGradle" }
+androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
 androidx-test-runner = "androidx.test:runner:1.6.2"
 animalsniffer-annotations = "org.codehaus.mojo:animal-sniffer-annotations:1.24"
 aqute-resolve = { module = "biz.aQute.bnd:biz.aQute.resolve", version.ref = "biz-aQute-bnd" }
@@ -43,7 +45,7 @@ eclipseOsgi = "org.eclipse.platform:org.eclipse.osgi:3.22.0"
 findbugs-jsr305 = "com.google.code.findbugs:jsr305:3.0.2"
 graal-sdk = { module = "org.graalvm.sdk:graal-sdk", version.ref = "graalvm" }
 gradlePlugin-android = "com.android.tools.build:gradle:8.7.3"
-gradlePlugin-androidJunit5 = "de.mannodermaus.gradle.plugins:android-junit5:1.11.2.0"
+gradlePlugin-androidJunit5 = "de.mannodermaus.gradle.plugins:android-junit5:1.11.3.0"
 gradlePlugin-animalsniffer = "ru.vyarus:gradle-animalsniffer-plugin:1.7.2"
 gradlePlugin-binaryCompatibilityValidator = "org.jetbrains.kotlinx.binary-compatibility-validator:org.jetbrains.kotlinx.binary-compatibility-validator.gradle.plugin:0.17.0"
 gradlePlugin-bnd = { module = "biz.aQute.bnd:biz.aQute.bnd.gradle", version.ref = "biz-aQute-bnd" }
@@ -58,7 +60,7 @@ gradlePlugin-shadow = "gradle.plugin.com.github.johnrengelman:shadow:8.0.0"
 gradlePlugin-spotless = "com.diffplug.spotless:spotless-plugin-gradle:6.25.0"
 guava-jre = "com.google.guava:guava:33.4.0-jre"
 hamcrestLibrary = "org.hamcrest:hamcrest-library:3.0"
-httpClient5 = "org.apache.httpcomponents.client5:httpclient5:5.3.1"
+httpClient5 = "org.apache.httpcomponents.client5:httpclient5:5.4.1"
 jettyClient = "org.eclipse.jetty:jetty-client:9.4.56.v20240826"
 jnr-unixsocket = "com.github.jnr:jnr-unixsocket:0.38.23"
 jsoup = "org.jsoup:jsoup:1.18.3"
